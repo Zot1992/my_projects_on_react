@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d1dbdf;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    padding: 30px;
+    margin: auto;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.task {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(246, 141, 141);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
