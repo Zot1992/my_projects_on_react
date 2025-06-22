@@ -1,23 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-function TextEdit(props) { //Редактирование задачи
+const TextEdit = ({ task, onUpdate }) => {
 
-    const [inputValue, setInputValue] = useState('');
+    const [editText, setEditText] = useState(task.text);
 
-    const edit = () => {
-        const trimmed = inputValue.trim();
+    const handleSave = () => {
+        const trimmed = editText.trim();
+        if (trimmed && trimmed !== task.text) {
+            onUpdate(task.id, trimmed);
+        }
 
-        props.setTasks(prevTasks => prevTasks.map(task => (task.id === props.taskId && trimmed !== '') ? ({ ...task, text: trimmed }) : task))
-        props.onClose();
+    }
+
+    const KeyboardTrig = (e) => {
+
+        switch (e.key) {
+            case 'Enter':
+                handleSave();
+                break;
+            case 'Escape':
+
+                setEditText(task.text);
+                break;
+
+            default:
+                break;
+        }
     }
 
     return (
-        <div id='edit'>
-            <input type="text"
-                placeholder='Введите новую задачу'
-                value={inputValue} onChange={(event) => setInputValue(event.target.value)}
-                onKeyPress={(event) => event.key === 'Enter' && edit(props.tasks.id)} />
-            <button onClick={edit}>Применить</button>
+        <div className="edit">
+            <input
+                type="text"
+                placeholder="Введите новую задачу"
+                value={editText}
+                onChange={(e) => setEditText(e.target.value)}
+                onKeyDown={KeyboardTrig}
+            />
+            <button onClick={handleSave}>Сохранить</button>
         </div>
     )
 }

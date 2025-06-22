@@ -1,6 +1,6 @@
 import '../TodoList/TodoList.css'
 import React, { useState, useEffect } from 'react'
-import TextEdit from '../TodoList/TextEdit.jsx';
+import TextEdit from '../TodoList/TextEdit.jsx'
 
 function TodoList() {
 
@@ -13,66 +13,100 @@ function TodoList() {
         id: 1,
         text: 'Сделать задачу',
         completed: true
-    }])
-    const [inputValue, setInputValue] = useState(''); //Хранит значение из input
-    const [completedTasks, setCompletedTasks] = useState(0); //Хранит колличесво выполненных задач
-    const [activeTasks, setActiveTasks] = useState(0); //Хранит колличесво активных задач
-    const [editingTaskId, setEditingTaskId] = useState(null); // Храним id редактируемой задачи
+    },
+    ])
 
-    useEffect(() => {
-        const completed = tasks.filter(task => task.completed).length;
-        const active = tasks.filter(task => !task.completed).length;
-        setCompletedTasks(completed);
-        setActiveTasks(active);
-    }, [tasks]); //Срабатывает когда tasks меняется
+    const [editTaskId, setEditTaskId] = useState(null); //Хранит id задачи
+    const [editText, setEditText] = useState(''); //Хранит введеный текст в input
+    const [filter, setFilter] = useState('all'); //Хранит выбранные параметры для поиска определенных задач по параметрам
 
-    const addTask = () => { //Добавление задачи
-        const trimedValue = inputValue.trim();
+    const newId = () => {  //Ищет максимальный id 
+        let maxId = 0;
+        tasks.forEach(task => { if (maxId < task.id) maxId = task.id })
+        return maxId + 1
+    }
+
+    const [nextID, setNextID] = useState(newId); //Хранит следующий id задачи
+    const newAtTask = () => {  //Добавляет новую задачу
+        const trimedValue = editText.trim();
 
         if (trimedValue) {
-            const newTask = {
-                id: tasks.length,
+            const newTask =
+            {
+                id: nextID,
                 text: trimedValue,
                 completed: false
             }
+            setNextID(prev => prev + 1);
             setTasks(prevTasks => [...prevTasks, newTask]);
-            setInputValue('');
+            setEditText('');
         }
-        else {
-            alert('Вы не ввели текст задачи! Что бы ее добавить введите текст и затем нажмите (Добавить задачу).');
-        }
+        else alert('Вы не ввели текст задачи! Что бы ее добавить введите текст и затем нажмите (Добавить задачу).')
     }
+
+    const startEdit = (taskId, currentText) => { return setEditTaskId(taskId), setEditText(currentText) } //Заходим в редактирование текста задачи
+
+    const saveEdit = (taskId, newText) => { //Сохраняет измененный текст и выходит из редактирования
+        const tremmed = newText.trim();
+        if (tremmed && taskId !== null) {
+            setTasks(prev => {
+                return prev.map(task => task.id === taskId ? { ...task, text: tremmed } : task)
+            })
+        }
+        cancelEdit();
+    }
+
+    const cancelEdit = () => { return setEditTaskId(null), setEditText('') } //Выходим из редактирования текста задачи
+
+    useEffect(() => {
+        console.log(tasks)
+    }, [tasks]); //Срабатывает когда tasks меняется
+
+
+    const filteredTaks = tasks.filter((task) => {   // Работа с фильтром
+        if (filter === 'activ') {
+            return !task.completed
+        }
+
+        if (filter === 'complited') {
+            return task.completed
+        }
+
+        return true
+    })
 
     const removeTask = (taskId) => setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId))  //Удаление задачи
     const completeTask = (taskId) => setTasks(prevTasks => prevTasks.map(task => (task.id === taskId) ? ({ ...task, completed: !task.completed }) : task)) // Меняем статус задачи
     const deleteComplitedTasks = () => setTasks(tasks => tasks.filter(task => task.completed !== true))//Удаление выполненных задач
-    const switchToEditMode = (taskId) => setEditingTaskId(taskId) //Редактирование появляется под выбранной задачей
-    const exitEditMode = () => setEditingTaskId(null); //Выход из редактирования
+
+    const stat = {
+        total: tasks.length,
+        activ: tasks.filter((task) => !task.completed).length,
+        completed: tasks.filter((task) => task.completed).length
+    }
 
     return (
         <div className='container'>
             <h1>Список дел</h1>
             <div className='task-app'>
-                <input className='input' type="text" placeholder='Введите задачу' value={inputValue} onChange={(event) => setInputValue(event.target.value)}
-                    onKeyPress={(event) => event.key === 'Enter' && addTask()} />
-                <button className='btn' onClick={addTask}>Добавить задачу</button>
+                <input className='input' type="text" placeholder='Введите задачу' value={editText} onChange={(e) => setEditText(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && newAtTask()} />
+                <button className='btn' onClick={newAtTask}>Добавить задачу</button>
                 <button className='btn' onClick={() => console.log(tasks)}>Показать массив</button>
             </div>
 
             <div className='container-tasks' id='container-tasks'>
-                <ul>{tasks.map(task => (
+                <ul>{filteredTaks.map(task => (
                     <li className={`task ${task.completed ? 'completed' : ''}`} key={task.id}>
-                        <span>{task.text}</span>
+                        <span onDoubleClick={() => startEdit(task.id, task.text)}>{task.text}</span>
                         <input type="checkbox" checked={task.completed} onChange={() => completeTask(task.id)} />
-                        <button onClick={() => switchToEditMode(task.id)}>Редактировать</button>
                         <button onClick={() => removeTask(task.id)}>Удалить</button>
-                        {editingTaskId === task.id && ( // Показываем TextEdit только для текущего элемента
+                        {editTaskId === task.id && ( // Показываем TodoItem только для текущего элемента
                             <TextEdit
-                                onClose={exitEditMode}
-                                taskId={task.id}
-                                taskText={task.text}
-                                setTasks={setTasks}
-                            />)}
+                                task={task}
+                                onUpdate={saveEdit}
+                            />
+                        )}
                     </li>
                 ))}
                 </ul>
@@ -80,9 +114,14 @@ function TodoList() {
             <button onClick={deleteComplitedTasks}>Удалить выполненные задачи</button>
             <div className='container-statistics'>
                 <h3>Статистика</h3>
-                <p>Активных задач:{activeTasks}</p>
-                <p>Выполненных задач:{completedTasks}</p>
-                <p>Общее колличесво задач: {tasks.length}</p>
+                <p>Активных задач:{stat.activ}</p>
+                <p>Выполненных задач:{stat.completed}</p>
+                <p>Общее колличесво задач: {stat.total}</p>
+            </div>
+            <div>
+                <button onClick={() => setFilter('all')}>Все</button>
+                <button onClick={() => setFilter('activ')}>Активные</button>
+                <button onClick={() => setFilter('complited')}>Выполненные</button>
             </div>
         </div>
     )
