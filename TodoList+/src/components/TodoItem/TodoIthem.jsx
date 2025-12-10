@@ -6,6 +6,7 @@ export const TodoIthem = ({ task = [], changeTodos, deleteTask }) => {
     const [edit, setEdit] = useState(false);
     const [newText, setNewText] = useState('');
 
+    //Удаление выбранной задачи
     const handleOnDelete = (task) => {
         if (confirm("Вы уверены, что хотите удалить эту карточку?")) {
             return deleteTask(task.id)
@@ -13,6 +14,7 @@ export const TodoIthem = ({ task = [], changeTodos, deleteTask }) => {
         return
     }
 
+    //Смена статуса выбранной задачи 
     const handleOnStatus = (taskId) => (e) => {
         const newCompleted = e.target.checked;
 
@@ -25,6 +27,7 @@ export const TodoIthem = ({ task = [], changeTodos, deleteTask }) => {
         )
     }
 
+    //Применение редактирования на выбранной задаче
     const applyEdit = (taskId) => {
         changeTodos(prev =>
             prev.map(t =>
@@ -35,10 +38,12 @@ export const TodoIthem = ({ task = [], changeTodos, deleteTask }) => {
         )
     }
 
+    //Открытие режима редактирования
     const openEdit = () => {
         setEdit(true);
     }
 
+    //Закрытие режима редактирования
     const closeEdit = () => {
         setEdit(false);
     }

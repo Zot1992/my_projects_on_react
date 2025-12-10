@@ -5,11 +5,13 @@ export const TodoStats = ({ tasks = [], countActive, countCompleted, deleteTasks
     const [active, setActive] = useState(0);
     const [complited, setComplited] = useState(0);
 
+    //Подсчет активных и выполненных задач
     useEffect(() => {
         setActive(countActive())
         setComplited(countCompleted())
     }, [tasks, tasks.complited])
 
+    //Делает кнопку видимой если хотя бы одна задача является выполненной
     const hasCompletedTasks = () => tasks.some(task => task.completed);
 
     return (

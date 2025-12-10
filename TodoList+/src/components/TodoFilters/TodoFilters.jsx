@@ -6,6 +6,7 @@ export const TodoFilters = ({ onFiltredTodos }) => {
     const [openActive, setOpenActive] = useState(false);
     const [openCompleted, setOpenCompleted] = useState(false);
 
+    //Переключение подсветки кнопки выбранного фильтра
     const visitAll = () => {
         setOpenAll(true)
         setOpenActive(false)

@@ -10,6 +10,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
 
+  //Загрузка данных из localStorage
   useEffect(() => {
     try {
       const saved = localStorage.getItem('todoList');
@@ -21,6 +22,7 @@ function App() {
     }
   }, [])
 
+  //Запись данных в localStorage
   useEffect(() => {
     try {
       localStorage.setItem('todoList', JSON.stringify(todos));
@@ -29,6 +31,8 @@ function App() {
     }
   }, [todos])
 
+
+  //Добавление новой карточки
   const addTodo = (text) => {
     const newTodo = {
       id: Date.now(),
@@ -39,9 +43,11 @@ function App() {
     setTodos([...todos, newTodo])
   }
 
+  //Подсчет активных и выполненых задач
   const countActive = () => todos.filter(task => !task.completed).length;
   const countCompleted = () => todos.filter(task => task.completed).length;
 
+  //Фильтр задач
   const filtredTodos = (selected) => {
     let filtered = todos;
 
@@ -60,11 +66,13 @@ function App() {
     return filtered;
   }
 
+  //Удаление выбранной задачи
   const deleteTask = (taskId) => {
     const newTodos = todos.filter(task => task.id !== taskId);
     setTodos(newTodos);
   }
 
+  //Удаление выполненных задач
   const deleteTasksComplited = () => {
     const newTodos = todos.filter(task => !task.completed);
     setTodos(newTodos);
