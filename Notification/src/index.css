@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button{
+  border: none;
+}
+
+input {
+  padding-left: 10px;
+  padding-right: 10px;
+}

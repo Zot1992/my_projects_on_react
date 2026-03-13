@@ -1,0 +1,13 @@
+.header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: rgb(237, 237, 237);
+}
+
+.header_container {
+    max-width: 1200px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
