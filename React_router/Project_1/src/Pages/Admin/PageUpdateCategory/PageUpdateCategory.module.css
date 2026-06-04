@@ -1,0 +1,34 @@
+.pageUpdateCategory {
+    padding: 25px;
+}
+
+.pageUpdateCategory_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(202, 202, 202);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 300ms;
+}
+
+.input {
+    padding-left: 10px;
+    padding-right: 10px;
+}

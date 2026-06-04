@@ -1,0 +1,14 @@
+.category {
+    background-color: rgb(192, 192, 192);
+    padding: 25px;
+    border-radius: 8px;
+    transform: scale(1);
+    transition-duration: 300ms;
+    box-shadow: 5px 5px 10px 5px gray;
+    width: 250px;
+}
+
+.category:hover {
+    transform: scale(1.04);
+    transition-duration: 300ms;
+}

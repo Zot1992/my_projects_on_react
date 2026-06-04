@@ -1,0 +1,15 @@
+.pageCategories {
+    padding: 25px;
+}
+
+.pageCategories_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categories_item {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}

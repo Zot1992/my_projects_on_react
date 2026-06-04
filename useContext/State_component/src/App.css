@@ -1,0 +1,40 @@
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.indemt {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.pad {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 20px;
+}

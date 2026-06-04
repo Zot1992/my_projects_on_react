@@ -1,0 +1,34 @@
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 50px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.col {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.task {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(232, 232, 232);
+}

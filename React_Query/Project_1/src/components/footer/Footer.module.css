@@ -1,0 +1,13 @@
+.footer {
+    background-color: rgb(226, 222, 222);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}

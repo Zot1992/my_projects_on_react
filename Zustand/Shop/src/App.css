@@ -1,0 +1,143 @@
+.header {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 50px 25px;
+}
+
+.content-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart_content {
+  position: relative;
+}
+
+.cart_count {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: bold;
+}
+
+.buttonCart {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(199, 198, 198);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.buttonCart_Icon {
+  width: 30px;
+  height: 30px;
+}
+
+.button_add {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.Card {
+  padding: 20px;
+  box-shadow: 0 0 10px gray;
+  border-radius: 25px;
+}
+
+.Card__price {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.Shopping_cart {
+  width: 300px;
+  padding: 15px;
+  background-color: rgb(210, 209, 209);
+  text-align: center;
+  border-radius: 32px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: 2;
+}
+
+.cart_item {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.cart_item__image {
+  padding: 5px;
+}
+
+.cart_item__info {
+  align-items: flex-start;
+}
+
+.cart_item__info__price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart_total {
+  margin-top: 25px;
+  padding-top: 15px;
+  gap: 25px;
+}
+
+.cart_total_sum {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.cart_total__price {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.button_delete {
+  padding: 5px 15px;
+  border-radius: 25px;
+  font-size: 10px;
+  margin-top: 7px;
+}

@@ -1,0 +1,39 @@
+.category {
+    background-color: rgb(207, 205, 205);
+    border-radius: 8px;
+    padding: 25px;
+    transform: scale(1);
+    transition-duration: 300ms;
+}
+
+.category:hover {
+    transform: scale(1.04);
+    transition-duration: 300ms;
+}
+
+.category.container {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+
+.buttenGrupe {
+    display: flex;
+    gap: 25px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 300ms;
+}

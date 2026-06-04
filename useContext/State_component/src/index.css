@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    transition-duration: 300ms;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 300ms;
+}
+
+h3 {
+    font-size: 25px;
+    display: flex;
+    flex-grow: 1;
+}
+
+input {
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    width: 100%;
+}

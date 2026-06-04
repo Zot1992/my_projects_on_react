@@ -1,0 +1,72 @@
+.main {}
+
+.main_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+.main_text {
+    padding: 25px;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 5px;
+}
+
+
+.buttonGroup {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 25px;
+    flex-wrap: wrap;
+
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(226, 222, 222);
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+}
+
+.active {
+    color: white !important;
+    background-color: black;
+}
+
+.loading {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
+
+.link {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}

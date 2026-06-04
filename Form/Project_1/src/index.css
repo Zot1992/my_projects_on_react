@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+form {
+    max-width: 500px;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 32px;
+}
+
+input {
+    width: 100%;
+    background: none;
+    padding: 15px 25px;
+    border-radius: 32px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    border-radius: 32px;
+    font-size: 20px;
+    padding: 15px 25px;
+    background: black;
+    color: white;
+}
+
+button:hover {
+    color: rgb(209, 209, 209);
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 50px;
+}
+
+.col {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.custom-toast-container .Toastify__toast .Toastify__close-button {
+    /* выше специфичность */
+    top: 5px;
+    left: 140px;
+}

@@ -1,0 +1,21 @@
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.category {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+    background: #e8e8e8;
+    padding: 15px;
+    margin-bottom: 20px;
+}

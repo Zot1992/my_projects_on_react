@@ -1,0 +1,17 @@
+.ratingPage {
+    padding: 25px;
+}
+
+.ratingPage_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}

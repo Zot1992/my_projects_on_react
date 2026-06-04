@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h3{
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 32px;
+  padding: 15px;
+  background-color: rgb(159, 159, 159);
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+  transition-duration: 300ms;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,27 @@
+.card {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    border: 1px solid rgb(174, 174, 174);
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 12px;
+    transform: scale(1);
+    transition-duration: 300ms;
+}
+
+.card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+:hover.card {
+    transform: scale(1.04);
+    transition-duration: 300ms;
+    box-shadow: 5px 5px 10px 5px rgb(211, 211, 211);
+}

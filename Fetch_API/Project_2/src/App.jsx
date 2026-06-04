@@ -1,0 +1,79 @@
+import './App.css'
+import { Routes, Route } from "react-router";
+import { useState, useEffect } from 'react';
+
+import { MainPage } from './Pages/User/MainPage/MainPage'
+import { ArticlesPage } from './Pages/User/ArticlesPage/ArticlesPage'
+import { WePage } from './Pages/User/WePage/WePage'
+import { Page404 } from './Pages/User/Page404/Page404';
+import { SingleArticlePage } from './Pages/User/SingleArticlePage/SingleArticlePage'
+import { User } from './components/User';
+
+import { Admin } from './components/Admin';
+import { PageDashboard } from './Pages/Admin/PageDashboard/PageDashboard'
+import { PageCategories } from './Pages/Admin/PageCategories/PageCategories';
+import { PageUpdateCategory } from './Pages/Admin/PageUpdateCategory/PageUpdateCategory';
+import { PageCreateCategory } from './Pages/Admin/PageCreateCategory/PageCreateCategory';
+import { PageDashboardArticles } from './Pages/Admin/PageDashboardArticles/PageDashboardArticles';
+import { PageUpdateArticle } from './Pages/Admin/PageUpdateArticle/PageUpdateArticle';
+import { PageCreateArticle } from './Pages/Admin/PageCreateArticle/PageCreateArticle';
+
+
+
+function App() {
+
+  // const [categories, setCategories] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState('');
+
+  // const [articles, setArticles] = useState([]);
+
+
+  // useEffect(() => {
+  //   fetch('https://server-blog.blasars.ru/api/categories')
+  //     .then((response) => {
+  //       if (response.status >= 400) {
+  //         throw new Error('Ошибка клиента: проверьте параметры запроса');
+  //       }
+  //       else if (response.status >= 500) {
+  //         throw new Error('Внутренняя ошибка сервера');
+  //       }
+
+  //       return response.json()
+  //     })
+  //     .then((data) => setCategories(data.body || data))
+  //     .catch(err => setError(err.message))
+  //     .finally(() => setLoading(false))
+  // }, [])
+
+
+
+  return (
+    <>
+      <Routes>
+
+        <Route path='/dashboard' element={<Admin />}>
+          <Route index element={<PageDashboard />}></Route>
+          <Route path='categories' element={<PageCategories />}></Route>
+          <Route path='categories/create' element={<PageCreateCategory />}></Route>
+          <Route path='categories/update/:categoryId' element={<PageUpdateCategory />}></Route>
+          <Route path='articles' element={<PageDashboardArticles />}></Route>
+          <Route path='articles/create' element={<PageCreateArticle />}></Route>
+          <Route path='articles/update/:articleId' element={<PageUpdateArticle />}></Route>
+        </Route>
+
+        <Route path='/' element={<User />}>
+          <Route index element={<MainPage />}></Route>
+          <Route path='articles' element={<ArticlesPage />}></Route>
+          <Route path='articles/:categorySlug' element={<ArticlesPage />}></Route>
+          <Route path='articles/:categorySlug/:articleId' element={<SingleArticlePage />}></Route>
+          <Route path='we' element={<WePage />}></Route>
+          <Route path='*' element={<Page404 />}></Route>
+        </Route>
+
+      </Routes>
+    </>
+  )
+}
+
+export default App

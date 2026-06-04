@@ -1,0 +1,17 @@
+export const arrUsers = [
+    { id: 1, name: 'Петр', age: 30 },
+    { id: 2, name: 'Михаил', age: 25 },
+    { id: 3, name: 'Светлана', age: 35 },
+    { id: 4, name: 'Алена', age: 28 },
+    { id: 5, name: 'Евгений', age: 32 },
+    { id: 6, name: 'Владимир', age: 27 },
+    { id: 7, name: 'Александр', age: 32 },
+    { id: 8, name: 'Никита', age: 29 },
+    { id: 9, name: 'Дмитрий', age: 31 },
+    { id: 10, name: 'Алексей', age: 26 },
+    { id: 11, name: 'Владислав', age: 33 },
+    { id: 12, name: 'Виктория', age: 29 },
+    { id: 13, name: 'Анастасия', age: 30 },
+    { id: 14, name: 'Надежда', age: 24 },
+    { id: 15, name: 'Екатерина', age: 39 },
+]

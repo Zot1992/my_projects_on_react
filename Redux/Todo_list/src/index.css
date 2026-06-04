@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button {
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: rgb(206, 206, 206);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    transition-duration: 300ms;
+}
+
+input {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}

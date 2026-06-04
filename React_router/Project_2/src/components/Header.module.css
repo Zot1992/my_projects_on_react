@@ -1,0 +1,52 @@
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(209, 209, 209);
+}
+
+.header_container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    padding-left: 20px;
+}
+
+.item {
+    list-style-type: none;
+}
+
+.link {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 300ms;
+}
+
+.active {
+    color: red !important;
+    /* !important чтобы переопределить hover при активности */
+}
+
+
+@media screen and (max-width: 767px) {
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+}

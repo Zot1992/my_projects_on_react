@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+input {
+    padding: 5px 20px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+}

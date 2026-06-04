@@ -1,0 +1,17 @@
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px 50px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.grup {
+  display: flex;
+  align-items: center;
+}

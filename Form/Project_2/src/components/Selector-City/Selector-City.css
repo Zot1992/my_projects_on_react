@@ -1,0 +1,99 @@
+/* 
+    HTML структура списка React Select
+
+    city - является префиксом для всех классов, который передается в проп classNamePrefix
+
+    <div class="city-container">
+        <div class="city__control">
+            <div class="city__value-container">
+                <div class="city__single-value">...</div>
+                <div class="city__input-container"></div>
+            </div>
+            <div class="city__indicators">
+                <span class="city__indicator-separator"></span>
+                <div class="city__indicator city__clear-indicator">
+                    <svg></svg>
+                </div>
+                <div class="city__indicator city__dropdown-indicator">
+                    <svg></svg>
+                </div>
+            </div>
+        </div>
+        <div class="city__menu">
+            <div class="city__menu-list">
+                <div class="city__option">...</div>
+            </div>
+        </div>
+    </div> 
+*/
+
+.select-city {
+    width: 100%;
+}
+
+.select-city .city__control {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 7px;
+    box-shadow: none;
+    border-width: 2px;
+    /* border-color: #3b3b44; */
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    color: #000000;
+    box-shadow: none;
+}
+
+.select-city .city__control:hover,
+.select-city .city__control:focus,
+.select-city .city__control--is-focused {
+    border-color: #000000
+}
+
+.select-city .city__indicator {
+    color: rgba(128, 128, 128, 0.5);
+}
+
+.city__indicator-separator {
+    display: none;
+}
+
+.select-city .city__menu {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #848484;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    color: #999898;
+}
+
+.select-city .city__option {
+    background-color: transparent;
+    border-radius: 7px;
+}
+
+.select-city .city__option--is-selected {
+    color: rgb(0, 0, 0);
+}
+
+
+.select-city .city__option:hover {
+    background-color: #f0efef;
+}
+
+.select-city .city__option--is-selected:hover {
+    background-color: #f0efef;
+}
+
+.select-city .city__option:active {
+    background-color: transparent;
+}
+
+.select-city .city__input-container,
+.select-city .city__single-value {
+    color: #000000;
+    font-size: 16px;
+}
+
+.select-city .city__placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}

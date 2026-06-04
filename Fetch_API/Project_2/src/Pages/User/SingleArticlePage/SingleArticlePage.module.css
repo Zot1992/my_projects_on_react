@@ -1,0 +1,30 @@
+.singleArticlePage {
+    padding: 25px;
+}
+
+.singleArticlePage_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 300ms;
+}

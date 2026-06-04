@@ -1,0 +1,135 @@
+/* 
+    HTML структура списка React Select
+
+    technology - является префиксом для всех классов, который передается в проп classNamePrefix
+
+  <div class="technology-container">
+  <div class="technology__control">
+    <div class="technology__value-container">
+      <!-- ВЫБРАННЫЕ ЭЛЕМЕНТЫ (теги) -->
+      <div class="technology__multi-value">
+        <div class="technology__multi-value__value">React</div>
+        <div class="technology__multi-value__remove">
+          <svg>×</svg> <!-- кнопка удаления -->
+        </div>
+      </div>
+
+      <div class="technology__multi-value">
+        <div class="technology__multi-value__value">Vue</div>
+        <div class="technology__multi-value__remove">
+          <svg>×</svg>
+        </div>
+      </div>
+
+      <!-- ПОЛЕ ВВОДА ДЛЯ ПОИСКА И ДОБАВЛЕНИЯ НОВЫХ ОПЦИЙ -->
+      <div class="technology__input-container">
+        <input type="text" placeholder="Выберите технологии..." />
+      </div>
+    </div>
+
+    <!-- ИНДИКАТОРЫ (очистка, стрелка раскрывающегося списка) -->
+    <div class="technology__indicators">
+      <span class="technology__indicator-separator"></span>
+      <div class="technology__indicator technology__clear-indicator">
+        <svg>...</svg>
+      </div>
+      <div class="technology__indicator technology__dropdown-indicator">
+        <svg>...</svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ВЫПАДАЮЩЕЕ МЕНЮ С ОПЦИЯМИ -->
+  <div class="technology__menu">
+    <div class="technology__menu-list">
+      <div class="technology__option">React</div>
+      <div class="technology__option">Vue</div>
+      <div class="technology__option">Angular</div>
+      <div class="technology__option">Svelte</div>
+    </div>
+  </div>
+</div>
+*/
+
+.select-technology {
+    width: 100%;
+}
+
+.select-technology .technology__control {
+    background-color: #ffffff;
+    border-radius: 32px;
+    padding: 7px;
+    box-shadow: none;
+    border-width: 2px;
+    border-color: #3b3b44;
+    color: #000000;
+    box-shadow: none;
+}
+
+.select-technology .technology__control:hover,
+.select-technology .technology__control:focus,
+.select-technology .technology__control--is-focused {
+    border-color: #000000
+}
+
+.select-technology .technology__indicator {
+    color: #000000;
+}
+
+.technology__indicator-separator {
+    display: none;
+}
+
+.select-technology .technology__menu {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #848484;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    color: #999898;
+}
+
+.select-technology .technology__option {
+    background-color: transparent;
+    border-radius: 7px;
+}
+
+.select-technology .technology__option--is-selected {
+    color: rgb(0, 0, 0);
+}
+
+
+.select-technology .technology__option:hover {
+    background-color: #f0efef;
+}
+
+.select-technology .technology__option--is-selected:hover {
+    background-color: #f0efef;
+}
+
+.select-technology .technology__option:active {
+    background-color: transparent;
+}
+
+.select-technology .technology__input-container,
+.select-technology .technology__single-value {
+    color: #000000;
+    font-size: 16px;
+}
+
+.select-technology .technology__placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.technology__multi-value {
+    background-color: #ffebee !important;
+    border: 2px solid #ffcdd2 !important;
+    border-radius: 32px !important;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.technology__multi-value__remove {
+    border-radius: 50% !important;
+    padding: 0 6px !important;
+}

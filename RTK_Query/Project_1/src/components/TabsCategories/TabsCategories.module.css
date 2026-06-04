@@ -1,0 +1,19 @@
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.category {
+    text-decoration: none;
+    color: #333;
+    background-color: #e7e7e7;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.category.active {
+    background-color: #333;
+    color: #e7e7e7;
+}

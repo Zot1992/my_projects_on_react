@@ -1,0 +1,15 @@
+.progLangPage {
+    padding: 25px;
+}
+
+.progLangPage_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}

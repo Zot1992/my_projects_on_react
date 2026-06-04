@@ -1,0 +1,51 @@
+.article {
+    width: 210px;
+    height: 320px;
+    background-color: rgb(226, 222, 222);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    align-items: flex-start;
+}
+
+.article p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+:hover.article {
+    box-shadow: 5px 5px 10px 5px rgba(101, 101, 101, 0.5);
+    transition-duration: 300ms;
+    transform: scale(1.03);
+}
+
+.link {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 300ms;
+}
+
+@media screen and (max-width: 767px) {
+    .article {
+        width: 80%;
+    }
+}

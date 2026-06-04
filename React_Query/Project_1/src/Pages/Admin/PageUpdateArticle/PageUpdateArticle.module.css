@@ -1,0 +1,35 @@
+.pageUpdateArticle {
+    padding: 25px;
+}
+
+.pageUpdateArticle_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(202, 202, 202);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: white;
+    background-color: black;
+    transition-duration: 300ms;
+}
+
+.input {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}

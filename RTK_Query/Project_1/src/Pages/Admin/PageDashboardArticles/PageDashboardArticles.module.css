@@ -1,0 +1,15 @@
+.pageDashboardArticles {
+    padding: 25px;
+}
+
+.pageDashboardArticles_container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.articles {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
